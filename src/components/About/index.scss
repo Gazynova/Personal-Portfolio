@@ -1,12 +1,32 @@
+.text-zone {
+    width: 300px; /* Set the width of the text zone */
+    height: auto; /* Set the height of the text zone */
+    overflow-y: auto; /* Enable vertical scrolling */
+     /* Add some padding for readability */
+    
+    p{
+       padding: 0px 10px; 
+    }
+    /*border: 1px solid #ccc; /* Add a border for visibility */
+    
+  }
+
+  .text-zone::-webkit-scrollbar {
+    display: block;
+    width: 2px;
+  }
+
+
 .stage-cube-cont {
     height: 100%;
     width: 50%;
     position: absolute;
     right: 0;
     top: 0;
-    padding-top: 18%;
+    padding-top: 15%;
     margin-left: 0;
     overflow: hidden;
+    align-items: center;
 }
 
 
@@ -88,3 +108,4 @@
         transform: rotateX(90deg);
     }
 }
+

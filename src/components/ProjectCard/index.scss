@@ -7,142 +7,164 @@
     grid-gap: 1rem;
     padding: 1rem;
     max-width: 100%;
-}
-
-h1 {
-    font-weight: 'Coolvetica';
+    overflow-x: hidden; /* Prevents horizontal scrolling on the entire .Project container */
+  }
+  
+  h1 {
+    font-family: 'Coolvetica', sans-serif;
     font-size: 53px;
     font-weight: 500;
     color: #ffd700;
-
-    &::before {
-        content: "<h1>";
-        font-family: 'La Belle Aurore';
-        font-size: 18px;
-        position: absolute;
-        margin-top: -10px;
-        left: -10px;
-        opacity: 0.6;
-        line-height: 18px;
-
-    }
-
+    position: relative;
+  
+    &::before,
     &::after {
-        content: "<h1>";
-        font-family: 'La Belle Aurore';
-        font-size: 18px;
-        position: absolute;
-        margin-left: 20px;
-        left: -30px;
-        bottom: -30px;
-        opacity: 0.6;
-        line-height: 18px;
+      font-family: 'La Belle Aurore', cursive;
+      font-size: 18px;
+      position: absolute;
+      opacity: 0.6;
+      line-height: 18px;
     }
-
-    .text-animate-hover {
-        &:hover {
-            color: #fff;
-        }
-
-
+  
+    &::before {
+      content: "<h1>";
+      top: -10px;
     }
-
-}
-
-
-
-
-
-
-.project-card {
-
+  
+    &::after {
+      content: "</h1>";
+      left: 0px;
+      bottom: -30px;
+    }
+  
+    .text-animate-hover:hover {
+      color: #fff;
+    }
+  }
+  
+  .project-card {
     display: flex;
-    flex-direction: row;
-
-
+    flex-wrap: nowrap; /* Prevent wrapping to enable horizontal scrolling */
+    justify-content: flex-start;
+    margin-top: 20px;
+    overflow-x: scroll; /* Enable horizontal scroll for the cards */
+    padding: 10px;
+    scrollbar-width: none; /* Hide scrollbar */
+    width: 85%;
+  
     .card {
-        //background-color: #022c43;
-        padding: 20px;
-        margin: 20px;
-        height: 300px;
+      flex: 0 0 auto;
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+      margin-right: 20px; /* Adjust space between cards */
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px); /* Glassmorphism blur effect */
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+      transform-style: preserve-3d;
+  
+      &:hover {
+        transform: rotateY(180deg); /* Flip the card */
+      }
+  
+      .content {
         position: relative;
-        display: block;
-        align-items: flex-end;
-        justify-content: flex-end;
-        overflow: hidden;
         width: 100%;
-        text-align: center;
-        box-shadow: 0 16px 16px rgba(255, 255, 255, 0.1),
-            0 4px 4px rgba(255, 255, 255, 0.1),
-            0 8px 8px rgba(255, 255, 255, 0.1),
-            0 16px 16px rgba(255, 255, 255, 0.1);
-    }
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease-out;
+  
+        .front,
+        .back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          padding: 20px;
+          box-sizing: border-box;
+          border-radius: 15px;
+          transition: opacity 0.6s ease-in-out;
 
-    .content {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        z-index: 1;
+        }
+  
+        .front {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          opacity: 1;
+          z-index: 2; /* Ensure the front is on top initially */
+
+          &:hover{
+            opacity: 0;
+          }
+        }
+  
+        // .back {
+        //   display: none;
+        //   justify-content: center;
+        //   align-items: center;
+        //   flex-wrap: nowrap;
+        //   opacity: 1;
+        //   z-index: 1; /* Ensure the back is below initially */
+
+        //   &:hover{
+        //     opacity: 1;
+        //     display: block;
+        //   }
+        // }
 
 
+         .back{
+          
+          opacity: 0;
+
+          &:hover{
+            opacity: 1;
+          }
+        }
+  
         .title {
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
-            font-size: 20px;
-            position: relative;
-            padding: 5%;
-            color: #ffd700;
-            opacity: 0.5;
+          font-size: 24px;
+          color: #ffffff;
+          margin-bottom: auto; /* Push button to the bottom */
 
-            &:hover {
-                opacity: 1;
-
-            }
-
+          
         }
-
+  
         .copy {
-            font-family: "La Belle Aurora";
-            align-items: center;
-            position: relative;
-            font-size: 12px;
-            letter-spacing: 2px;
-            //overflow: initial;
-            //text-decoration-
-            color: #fff;
-            opacity: 0.5;
-
-            &:hover {
-                opacity: 1;
-            }
+          font-size: 14px;
+          color: #ffffff;
+          margin-bottom: 20px;
+          width: 100%;
+          border-radius: 15px;
+          transition: opacity 0.6s ease-in-out;
+          align-items: center;
+          justify-content: center;
+          
         }
-
-
+  
         .btn {
-            background: #022c43;
-            position: absolute;
-            top: 200px;
-            color: #ffd700;
-            font-size: 13px;
-            font-weight: 400;
-            letter-spacing: 4px;
-            padding: 10px 18px;
-            font-family: sans-serif;
-            text-decoration: none;
-            border: 1px solid #ffd700;
-            animation: fadeI 1s 1.8s backwards;
-
-
-            float: left;
-
-
-            &:hover {
-                background-color: #ffd700;
-                color: #333;
-            }
+          background-color: rgba(255, 99, 71, 0.8);
+          border: none;
+          padding: 10px 20px;
+          color: #fff;
+          cursor: pointer;
+          border-radius: 5px;
+          z-index: 100; /* Make sure the button is on top of everything */
+          position: relative; /* Adjust as necessary; can also be 'absolute' if needed */
+          pointer-events: auto; /* Ensure the button can be clicked */
         }
+      }
     }
-}
+  }
+  
+  
+  
+  
