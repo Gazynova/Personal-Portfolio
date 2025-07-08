@@ -45,6 +45,10 @@
                 transition: all 0.3s ease-out;
             }
 
+            svg{
+                color :white;
+            }
+
             &:hover {
                 color: #ffd700;
 
@@ -120,9 +124,11 @@
             a {
                 padding: 7px 0;
                 display: block;
-                font-size: 15px;
+                font-size: 18px;
                 line-height: 16px;
-
+                svg{
+                    color: white;
+                }
                 &:hover svg {
                     color: #ffd700;
 
