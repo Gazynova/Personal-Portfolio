@@ -75,7 +75,7 @@ const ProjectCard = () => {
               <div className="front">
                 <h2 className="title">{card.title}</h2>
                 <button
-                  className="btn"
+                  className="btn" 
                   onClick={() => window.open(card.link, "_blank")}
                 >
                   {card.button}
