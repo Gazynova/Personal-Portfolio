@@ -8,11 +8,12 @@
 .top-tags {
     bottom: auto;
     top: 35px;
+    font-size: 40px;
 }
 
 .tags {
     color: #ffd700;
-    opacity: 0.6;
+    opacity: 1;
     position: absolute;
     bottom: 0%;
     left: 120px;
@@ -44,6 +45,7 @@
 
 .project-page,
 .about-page,
+.project-page,
 .contact-page {
 
     .text-zone {
@@ -57,7 +59,7 @@
         vertical-align: middle;
 
         h1 {
-            font-size: 53px;
+            font-size: 50px;
             font-family: Coolvetica;
             color: #ffd700;
             font-weight: 400;
@@ -70,24 +72,25 @@
             &::before {
                 content: "<h1>";
                 font-family: 'La Belle Aurore';
-                font-size: 18px;
+                font-size: 25px;
                 position: absolute;
                 margin-top: -10px;
                 left: -10px;
-                opacity: 0.6;
+                opacity: 1;
                 line-height: 18px;
+                
 
             }
 
             &::after {
                 content: "<h1>";
                 font-family: 'La Belle Aurore';
-                font-size: 18px;
+                font-size: 25px;
                 position: absolute;
                 margin-left: 20px;
                 left: -30px;
                 bottom: -20px;
-                opacity: 0.6;
+                opacity: 1;
                 line-height: 18px;
             }
         }
@@ -100,6 +103,7 @@
             font-weight: 300;
             min-width: fit-content;
             animation: pulse 1s;
+            font-size: small;
 
             &:nth-of-type(1) {
                 animation-delay: 1.1s;

@@ -52,17 +52,13 @@ const Contact = () => {
             />
           </h1>
           <p>
-            Are you in need of a Frontend Developer who can turn your digital
-            dreams into captivating realities? Look no further! With my creative
-            flair and meticulous attention to detail, I craft visually stunning
-            and user-friendly interfaces that leave a lasting impression. From
-            pixel-perfect designs to seamless user experiences, I bring magic to
-            every line of code. Embracing the latest web technologies, I ensure
-            your website stands out from the crowd, captivating visitors from
-            the very first click. Let's collaborate and bring your vision to
-            life with a touch of innovation and a dash of brilliance. Elevate
-            your online presence with a Frontend Developer who knows how to
-            mesmerize your audience and make your brand shine like never before!
+            <b>Looking for a Frontend Developer</b> who can turn ideas into stunning
+            digital experiences? With a keen eye for design and a passion for
+            clean, responsive code, I create user-friendly interfaces that
+            captivate from the first click. Using the latest web technologies, I
+            build modern, pixel-perfect websites that elevate your brand and
+            engage your audience. Let’s bring your vision to life with
+            creativity, precision, and innovation.
           </p>
           <div className="contact-form">
             <form ref={refForm} onSubmit={sendEmail}>
